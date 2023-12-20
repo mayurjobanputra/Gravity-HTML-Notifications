@@ -55,11 +55,19 @@ function mayur_html_notification_settings_page() {
             <table class="form-table">
                 <tr>
                     <th scope="row"><label for="mayur_html_before">HTML Before Notification</label></th>
-                    <td><textarea name="mayur_html_before" rows="5" cols="50" id="mayur_html_before" class="large-text"><?php echo esc_textarea( $html_before ); ?></textarea></td>
+                    <td>
+                        <?php
+                        wp_editor( htmlspecialchars_decode( $html_before ), 'mayur_html_before', array( 'textarea_name' => 'mayur_html_before', 'teeny' => true, 'textarea_rows' => 10 ) );
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="mayur_html_after">HTML After Notification</label></th>
-                    <td><textarea name="mayur_html_after" rows="5" cols="50" id="mayur_html_after" class="large-text"><?php echo esc_textarea( $html_after ); ?></textarea></td>
+                    <td>
+                        <?php
+                        wp_editor( htmlspecialchars_decode( $html_after ), 'mayur_html_after', array( 'textarea_name' => 'mayur_html_after', 'teeny' => true, 'textarea_rows' => 10 ) );
+                        ?>
+                    </td>
                 </tr>
             </table>
             <?php submit_button( 'Save Settings' ); ?>
