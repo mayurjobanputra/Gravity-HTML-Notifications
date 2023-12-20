@@ -8,9 +8,10 @@ The plugin provides an admin interface to add custom HTML content that will be i
 
 ## Installation
 
-1. **Upload Plugin**: Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
-2. **Activate Plugin**: Activate the plugin through the 'Plugins' screen in WordPress.
-3. **Plugin Dependency**: Ensure that Gravity Forms is installed and active, as this plugin depends on it.
+1. **Download the Repository**: Download this repository as a ZIP file.
+2. **Install in WordPress**: In your WordPress admin area, go to 'Plugins' > 'Add New' and choose the 'Upload Plugin' option. Upload the downloaded ZIP file.
+3. **Activate Plugin**: After uploading, activate the plugin through the 'Plugins' screen in WordPress.
+4. **Plugin Dependency**: Ensure that Gravity Forms is installed and active, as this plugin depends on it.
 
 ## Usage
 
@@ -23,6 +24,10 @@ The plugin provides an admin interface to add custom HTML content that will be i
 - **Custom HTML Before and After**: Allows insertion of custom HTML before and after the email notification content.
 - **Simple Admin Interface**: Easy to use admin interface integrated into the WordPress dashboard.
 - **Gravity Forms Dependency Check**: Checks for the presence of Gravity Forms and deactivates itself if not found.
+
+## Contributions
+
+Your contributions are welcome! Please feel free to fork and expand this project as you see fit. If you have improvements or features you'd like to add, suggest a pull request, and I will consider merging it.
 
 ## Requirements
 
@@ -37,7 +42,7 @@ The plugin provides an admin interface to add custom HTML content that will be i
 
 ## License
 
-This project is licensed under the [LICENSE NAME] License - see the LICENSE.md file for details.
+This project is licensed under the GNU General Public License (GPL).
 
 ## Acknowledgments
 
