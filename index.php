@@ -78,8 +78,12 @@ function mayur_html_notification_settings_page() {
 
 add_action( 'admin_init', 'mayur_register_settings' );
 function mayur_register_settings() {
-    register_setting( 'mayur_options', 'mayur_html_before', 'sanitize_textarea_field' );
-    register_setting( 'mayur_options', 'mayur_html_after', 'sanitize_textarea_field' );
+    register_setting( 'mayur_options', 'mayur_html_before', 'mayur_sanitize_html_content' );
+    register_setting( 'mayur_options', 'mayur_html_after', 'mayur_sanitize_html_content' );
+}
+
+function mayur_sanitize_html_content( $input ) {
+    return htmlentities( $input, ENT_QUOTES, 'UTF-8' );
 }
 
 add_filter( 'gform_notification', 'mayur_customize_gform_email_notification', 10, 3 );
@@ -88,8 +92,8 @@ function mayur_customize_gform_email_notification( $notification, $form, $entry 
         return $notification;
     }
 
-    $html_before = get_option( 'mayur_html_before', '' );
-    $html_after = get_option( 'mayur_html_after', '' );
+    $html_before = html_entity_decode( get_option( 'mayur_html_before', '' ), ENT_QUOTES, 'UTF-8' );
+    $html_after = html_entity_decode( get_option( 'mayur_html_after', '' ), ENT_QUOTES, 'UTF-8' );
 
     $notification['message'] = $html_before . $notification['message'] . $html_after;
 
