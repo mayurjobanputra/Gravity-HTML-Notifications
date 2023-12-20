@@ -18,15 +18,16 @@ add_action( 'admin_menu', 'mayur_html_notification_menu' );
 function mayur_html_notification_menu() {
     if (class_exists('GFForms')) {
         add_submenu_page(
-            'gf_edit_forms',
-            'HTML Notifications',
-            'HTML Notifications',
-            'manage_options',
-            'mayur_html_notifications',
-            'mayur_html_notification_settings_page'
+            'gf_edit_forms', // The slug of the parent menu (Forms menu)
+            'HTML Notifications', // The page title
+            'HTML Notifications', // The menu title
+            'manage_options', // Capability required
+            'mayur_html_notifications', // Menu slug
+            'mayur_html_notification_settings_page' // Callback function
         );
     }
 }
+
 
 function mayur_html_notification_settings_page() {
     if ( !current_user_can( 'manage_options' ) ) {
